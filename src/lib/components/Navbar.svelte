@@ -1,10 +1,35 @@
-<div class="sticky top-0 navbar border border-gray-200 text-white z-50 p-5 bg-white flex justify-between w-full gap-x-5">
-	<div class="">
-		<a href="/" class="text-xl text-gray-700">
-            <img src="https://upload.wikimedia.org/wikipedia/id/7/70/Logo_GP_Ansor.png" alt="" class="w-10">
+<script lang="ts">
+    import logo from '$lib/images/AnsorPeduli.png';
+    import search from '$lib/logos/Search.svg';
+    import wa from '$lib/logos/WhatsApp.svg';
+</script>
+
+<div class="navbar sticky top-0 z-50 bg-white px-5 py-3">
+    <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-3">
+        <a href="/" class="shrink-0">
+            <img src={logo} alt="Ansor Peduli Logo" class="w-32 lg:w-44" />
+        </a> 
+        
+        <form class="w-full max-w-2xl">
+            <label class="relative flex w-full items-center">
+                <input 
+                    type="text" 
+                    placeholder="Cari Program..." 
+                    class="w-full rounded-xl border border-gray-300 py-2 px-4 text-gray-700 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                />
+                <img 
+                    src={search} 
+                    alt="Search Icon" 
+                    class="absolute right-4 h-5 w-5 text-gray-400" 
+                />
+            </label>
+        </form>
+
+        <a 
+            href="/" 
+            class="shrink-0 rounded-xl bg-[#D6FFEA] p-2 transition-colors hover:bg-[#c1f5d9]"
+        >
+            <img src={wa} alt="WhatsApp" class="w-7" />
         </a>
-	</div>
-    <form class="w-full">
-        <input type="text" name="search" placeholder="Cari apa saja" class="input input-bordered w-full text-black focus:outline-none" />
-    </form>
+    </div>
 </div>
