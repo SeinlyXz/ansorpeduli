@@ -1,20 +1,29 @@
 <script lang="ts">
-	let content = $props()
+	let { content } = $props()
+	import verified from "$lib/logos/verified.svg";
 </script>
 
-<div class="card bg-base-100 shadow-xl">
+<div class="bg-base-100 border border-gray-300 text-gray-500 lg:w-96 w-80 rounded-xl">
 	<figure>
 		<img
-			src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+			src="{content.img}"
 			alt="Shoes"
-			class="h-32 w-full object-cover"
+			class="h-52 w-full object-cover rounded-t-xl"
 		/>
 	</figure>
-	<div class="card-body">
-		<h2 class="card-title">{content.title}</h2>
-		<p>{content.description}</p>
-		<div class="card-actions justify-end">
-			<button class="btn btn-primary">Pilih</button>
-		</div>
+	<div class="px-5 py-4 flex flex-col gap-y-3 justify-between">
+		<h2 class="font-semibold text-gray-600 h-12 line-clamp-2">{content.title}</h2>
+		<section class="flex items-center gap-x-2">
+			<div class="bg-green-500 rounded-full w-4 h-4"></div>
+			<section class="flex items-center gap-x-1">
+				<p>{content.author}</p>
+				{#if content.verified}
+					<img src="{verified}" alt="" class="w-6 h-6" />
+				{/if}
+			</section>
+		</section>
+		<p>
+			Terkumpul <span class="font-semibold text-green-600">{content.collected}</span>
+		</p>
 	</div>
 </div>

@@ -5,7 +5,7 @@
 </script>
 
 <div class="navbar sticky top-0 z-50 bg-white px-5 py-3">
-    <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-3">
+    <div class="mx-auto flex w-full max-w-7xl items-center justify-between lg:gap-x-3 gap-x-1">
         <a href="/" class="shrink-0">
             <img src={logo} alt="Ansor Peduli Logo" class="w-32 lg:w-44" />
         </a> 
@@ -14,7 +14,8 @@
             <label class="relative flex w-full items-center">
                 <input 
                     type="text" 
-                    placeholder="Cari Program..." 
+                    placeholder="Cari program"
+                    name="search"
                     class="w-full rounded-xl border border-gray-300 py-2 px-4 text-gray-700 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
                 <img 
