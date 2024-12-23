@@ -72,7 +72,7 @@
                 <h1 class="lg:w-80 w-52 font-semibold text-white lg:text-2xl">
                     Siap siaga untuk Anda! Hubungi SIGAB kapan saja, di mana saja.
                 </h1>
-                <a href="/sigab" class="bg-white text-black rounded-xl px-4 py-2 w-44 flex gap-x-3 items-center justify-center">
+                <a href="/sigab" class="bg-gray-100 hover:bg-gray-200 text-black rounded-xl px-4 py-2 w-44 flex gap-x-3 items-center justify-center">
                     Lapor Sigab
                     <img src="{arrow}" alt="" />
                 </a>
@@ -102,20 +102,20 @@
             {/each}
         </section>
         <section class="flex justify-between gap-x-5">
-            <section class="bg-[#00BF59] lg:p-5 p-3 rounded-xl text-white w-full flex justify-between items-center">
+            <a href="/" class="bg-[#00BF59] hover:bg-[#00BF59]/80 lg:p-5 p-3 rounded-xl text-white w-full flex justify-between items-center">
                 <p class="font-medium lg:text-base text-sm">
                     Infaq/Shodaqoh
                 </p>
                 <img src="{handmade}" alt="" class="lg:w-6 lg:h-6 w-4 h-4" />
-            </section>
-            <section class="bg-[#00BF59] lg:p-5 p-3 rounded-xl text-white w-full flex justify-between items-center">
+            </a>
+            <a href="/" class="bg-[#00BF59] hover:bg-[#00BF59]/80 lg:p-5 p-3 rounded-xl text-white w-full flex justify-between items-center group">
                 <p class="font-medium lg:text-base text-xs">
                     Iuran Ansor
                 </p>
-                <p class="bg-[#2C05F2] lg:px-5 lg:py-1 px-3 py-1 rounded-2xl text-white lg:text-base text-xs">
+                <p class="bg-[#2C05F2] group-hover:bg-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl text-white lg:text-base text-xs">
                     SEGERA
                 </p>
-            </section>
+            </a>
         </section>
     </section>
     <section class="flex flex-col gap-y-5">
