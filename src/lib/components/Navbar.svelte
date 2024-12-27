@@ -4,10 +4,10 @@
     import wa from '$lib/logos/WhatsApp.svg';
 </script>
 
-<div class="navbar sticky top-0 z-50 bg-white px-5 py-3">
-    <div class="mx-auto flex w-full max-w-7xl items-center justify-between lg:gap-x-3 gap-x-1">
-        <a href="/" class="shrink-0">
-            <img src={logo} alt="Ansor Peduli Logo" class="w-32 lg:w-44" />
+<div class="navbar sticky top-0 z-50 bg-white px-5">
+    <div class="mx-auto flex w-full max-w-7xl items-center justify-between lg:gap-x-3 gap-x-1 lg:py-3">
+        <a href="/" class="shrink-0 pe-2">
+            <img src={logo} alt="Ansor Peduli Logo" class="w-24 lg:w-28" />
         </a> 
         
         <form class="w-full max-w-2xl">

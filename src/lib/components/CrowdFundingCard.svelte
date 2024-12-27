@@ -23,7 +23,7 @@
 			</section>
 		</section>
 		<p>
-			Terkumpul <span class="font-semibold text-green-600">{content.collected}</span>
+			Terkumpul <span class="font-bold text-green-600">{content.collected}</span>
 		</p>
 	</div>
 </div>
