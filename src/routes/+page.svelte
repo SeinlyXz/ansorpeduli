@@ -9,7 +9,7 @@
     import cap from "$lib/logos/Cap.png";
     import ambulance from "$lib/logos/Ambulance.png";
     import sirine from "$lib/logos/Sirine.png";
-	import CrowdfundingCard from "$lib/components/CrowdfundingCard.svelte";
+	import CrowdfundingCard from "$lib/components/CFCard.svelte";
 
     const care_categories = [
         {
