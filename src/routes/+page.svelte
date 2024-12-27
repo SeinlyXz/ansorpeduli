@@ -9,7 +9,7 @@
     import cap from "$lib/logos/Cap.png";
     import ambulance from "$lib/logos/Ambulance.png";
     import sirine from "$lib/logos/Sirine.png";
-	import CrowdFundingCard from "$lib/components/CrowdfundingCard.svelte";
+	import CrowdfundingCard from "$lib/components/CrowdfundingCard.svelte";
 
     const care_categories = [
         {
@@ -129,7 +129,7 @@
     <div class="carousel carousel-center space-x-4 ps-5">
         {#each crowdfundings as crowdfunding, index}
             <div class="carousel-item {index == crowdfundings.length - 1 ? 'pe-5' : ''}">
-                <CrowdFundingCard content={crowdfunding} />
+                <CrowdfundingCard content={crowdfunding} />
             </div>
         {/each}
     </div>
