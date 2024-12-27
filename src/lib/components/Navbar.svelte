@@ -4,9 +4,9 @@
     import wa from '$lib/logos/WhatsApp.svg';
 </script>
 
-<div class="navbar sticky top-0 z-50 bg-white px-5">
+<div class="navbar sticky top-0 z-50 bg-white px-[16px]">
     <div class="mx-auto flex w-full max-w-7xl items-center justify-between lg:gap-x-3 gap-x-1 lg:py-3">
-        <a href="/" class="shrink-0 pe-2">
+        <a href="/" class="shrink-0 pe-4">
             <img src={logo} alt="Ansor Peduli Logo" class="w-24 lg:w-28" />
         </a> 
         
