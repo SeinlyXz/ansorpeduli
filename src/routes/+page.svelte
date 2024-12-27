@@ -112,10 +112,10 @@
                 <img src="{handmade}" alt="" class="lg:w-6 lg:h-6 w-4 h-4" />
             </a>
             <a href="/" class="bg-[#00BF59] hover:bg-[#00BF59]/80 lg:p-5 p-3 rounded-xl text-white w-full flex justify-between items-center group">
-                <p class="font-medium lg:text-lg text-xs">
+                <p class="font-medium lg:text-lg text-sm">
                     Iuran Ansor
                 </p>
-                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[6pt] font-medium">
+                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[8pt] font-medium">
                     SEGERA
                 </p>
             </a>
