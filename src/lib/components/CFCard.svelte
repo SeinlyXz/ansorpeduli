@@ -18,7 +18,7 @@
 			<section class="flex items-center gap-x-1">
 				<p>{content.author}</p>
 				{#if content.verified}
-					<img src="{verified}" alt="" class="w-6 h-6" />
+					<img src="{verified}" alt="" class="w-4 h-4" />
 				{/if}
 			</section>
 		</section>
