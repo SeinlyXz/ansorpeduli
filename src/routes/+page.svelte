@@ -69,15 +69,15 @@
     
 </section>
 <section class="flex flex-col gap-y-10 lg:px-5 px-[16px]">
-    <section class="">
-        <img src="{banner}" alt="Banner" class="w-full rounded-xl lg:h-80 h-60 object-cover" />
-        <section class="flex justify-center mt-3 gap-x-3">
-            <button class="w-10 h-2 bg-gray-200 rounded-xl" aria-label="1"></button>
-            <button class="w-10 h-2 bg-green-500 rounded-xl" aria-label="2"></button>
-            <button class="w-10 h-2 bg-gray-200 rounded-xl" aria-label="3"></button>
+    <section class="flex flex-col gap-y-5">
+        <section class="py-[16px] flex flex-col gap-y-2">
+            <h2 class="font-medium text-2xl">
+                Bantuan Darurat
+            </h2>
+            <p class="lg:text-lg text-base">
+                Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset.
+            </p>
         </section>
-    </section>
-    <section class="">
         <section class="bg-[#E22020] lg:px-10 lg:p-10 p-5 rounded-xl relative overflow-hidden w-full">
             <section class="w-full flex flex-col gap-y-3 relative z-40">
                 <section class="flex relative">
@@ -95,13 +95,24 @@
                         <div class="absolute z-0 rounded-full bg-red-700 opacity-30 animate-slow-ping-2 lg:w-44 lg:h-44 w-32 h-32 ease-in-out"></div>
                     </section>            
                 </section>
-                <a href="/sigab" class="bg-gray-100 hover:bg-gray-200 text-black rounded-xl px-4 py-2 w-full flex gap-x-3 items-center justify-center font-semibold z-40">
+                <a href="/darurat" class="bg-gray-100 hover:bg-gray-200 text-black rounded-xl px-4 py-2 w-full flex gap-x-3 items-center justify-center font-semibold z-40">
                     LAPOR SIGAB
                     <img src="{arrow}" alt="" />
                 </a>
             </section>
         </section>
+        <section>
+            <h2 class="text-center font-medium text-xl">
+                Mitra Kedaruratan
+            </h2>
+            <section class="flex flex-wrap">
+                
+            </section>
+        </section>
     </section>
+</section>
+<div class="bg-[#E2E5E3] w-full h-2 my-3"></div>
+<section class="flex flex-col gap-y-10 lg:px-5 px-[16px]">
     <section class="flex flex-col gap-y-5">
         <h1 class="text-2xl font-semibold">
             Kategori Peduli
@@ -153,14 +164,19 @@
             {/each}
         </div>
     </section>
-    <section class="flex flex-col gap-y-5 w-full">
-        <h1 class="text-2xl font-semibold px-[16px]">
+    <section class="flex flex-col gap-y-5 w-full px-[16px]">
+        <h1 class="text-2xl font-semibold ">
             Semua Program
         </h1>
-        <div class="flex flex-col px-[16px] gap-y-3">
+        <div class="flex flex-col gap-y-3">
             {#each crowdfundings as crowdfunding}
                 <AllCfCard content={crowdfunding} />
             {/each}
         </div>
+        <button class="w-full rounded-xl border border-gray-300 bg-base-100 text-gray-700 flex justify-center px-[20px] py-[12px] hover:bg-gray-100 ease-in-out duration-300">
+            <p class="text-center">
+                Tampilkan Lebih Banyak
+            </p>
+        </button>
     </section>
 </section>
