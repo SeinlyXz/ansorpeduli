@@ -6,6 +6,18 @@
 		// @ts-ignore
 		document.getElementById('my_modal_2').showModal();
 	};
+
+    const closeModal = () => {
+        // @ts-ignore
+        document.getElementById('my_modal_2').close();
+    };
+    let searchInput = $state('');
+    const onsubmit = () => {
+       closeModal();
+       setTimeout(() => {
+            searchInput = '';
+        }, 200);
+    }
 </script>
 
 <header class="navbar sticky -top-[1px] z-50 border-b-[1px] border-gray-[#f7f7f7] bg-white px-[16px]">
@@ -26,8 +38,10 @@
 		</button>
 		<dialog id="my_modal_2" class="modal">
 			<div class="modal-box">
-				<h3 class="text-lg font-bold">Hello!</h3>
-				<p class="py-4">Press ESC key or click outside to close</p>
+				<form class="flex flex-col gap-y-2" onsubmit={onsubmit}>
+                    <input type="text" name="search" placeholder="Cari..." class="input input-bordered w-full" bind:value={searchInput}>
+                    <button class="btn btn-sm btn-primary">Search</button>
+                </form>
 			</div>
 			<form method="dialog" class="modal-backdrop">
 				<button>close</button>

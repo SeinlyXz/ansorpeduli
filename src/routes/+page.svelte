@@ -84,7 +84,7 @@
                     <h1 class="lg:w-[19rem] w-52 font-semibold text-white lg:text-2xl z-30">
                         Siap siaga untuk Anda! Hubungi SIGAB kapan saja, di mana saja.
                     </h1>
-                    <section class="flex justify-center items-center lg:ms-32 ms-16 lg:-mt-[30px] -mt-[10px]">
+                    <section class="flex justify-center items-center lg:ms-32 lg:-mt-[30px] ms-16 -mt-[10px]">
                         <img 
                             src="{warning}" 
                             alt="" 
@@ -103,7 +103,7 @@
         </section>
     </section>
 </section>
-<div class="bg-[#f7f7f7] w-full h-2 my-12"></div>
+<div class="bg-[#f7f7f7] w-full h-2 my-10"></div>
 <section class="flex flex-col gap-y-10 lg:px-5 px-[16px]">
     <section class="flex flex-col gap-y-5">
         <h1 class="text-2xl font-semibold text-green-500">
@@ -126,18 +126,18 @@
         </section>
         <section class="flex justify-between gap-x-[8px]">
             <a href="/" class="bg-[#005EFF] hover:bg-[#005EFF]/80 lg:p-5 p-3 rounded-[8px] text-white w-full flex justify-between items-center">
-                <p class="font-medium lg:text-lg text-sm">
+                <p class="font-medium lg:text-lg text-[14px]">
                     Tabungan
                 </p>
-                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[8pt] font-medium">
+                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[8px] font-medium">
                     SEGERA
                 </p>
             </a>
             <a href="/" class="bg-[#005EFF] hover:bg-[#005EFF]/80 lg:p-5 p-3 rounded-[8px] text-white w-full flex justify-between items-center group">
-                <p class="font-medium lg:text-lg text-sm">
+                <p class="font-medium lg:text-lg text-[14px]">
                     Iuran Ansor
                 </p>
-                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[8pt] font-medium">
+                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[8px] font-medium">
                     SEGERA
                 </p>
             </a>
@@ -169,7 +169,7 @@
             {/each}
         </div>
         <button class="w-full rounded-[8px] border border-gray-300 bg-base-100 text-gray-700 flex justify-center px-[20px] py-[12px] hover:bg-gray-100 ease-in-out duration-300">
-            <p class="text-center">
+            <p class="text-center text-black text-sm">
                 Tampilkan Lebih Banyak
             </p>
         </button>

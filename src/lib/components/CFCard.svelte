@@ -5,9 +5,9 @@
 
 <div class="w-80 rounded-[8px] border border-gray-300 bg-base-100 text-gray-500 lg:w-96">
 	<figure>
-		<img src={content.img} alt="Shoes" class="h-52 w-full rounded-t-xl object-cover" />
+		<img src={content.img} alt="Shoes" class="h-52 w-full rounded-t-[8px] object-cover" />
 	</figure>
-	<div class="flex flex-col justify-between gap-y-3 px-5 py-4">
+	<div class="flex flex-col justify-between gap-y-3 p-[16px]">
 		<h2 class="line-clamp-2 h-14 font-semibold text-gray-700 text-lg">{content.title}</h2>
 		<section class="flex items-center gap-x-2">
 			<div class="h-4 w-4 rounded-full bg-green-500"></div>

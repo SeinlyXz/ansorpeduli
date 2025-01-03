@@ -68,7 +68,7 @@
 </script>
 <Seo title="Ansor Darurat" />
 <DaruratNav {pathname}/>
-<section class="px-[16px] py-[16px] flex flex-col lg:gap-y-5 gap-y-2">
+<section class="px-[16px] pt-[16px] pb-[32px] flex flex-col lg:gap-y-5 gap-y-2">
     {#each datas as data}
         <a href="/darurat/{data.slug}" class="rounded-[8px] border border-gray-300 hover:bg-[#EDFFF5] group hover:border-[#AFFFD5] ease-in-out duration-300">
             <section class="rounded-t-xl flex gap-x-2 items-center border-b-[1px] border-gray-300 group-hover:border-[#AFFFD5] px-[16px] py-[12px]">
@@ -85,9 +85,9 @@
                     <p class="text-[14px] font-semibold">
                         MITRA
                     </p>
-                    <section class="flex gap-x-1">
+                    <section class="flex flex-wrap gap-1">
                         {#each data.mitra as mitra}
-                            <p class="bg-[#DEF7EC] text-[#03543F] px-[10px] py-[2px] rounded-[6px] text-center font-semibold lg:text-[9px] text-[7px]"> 
+                            <p class="bg-[#DEF7EC] text-[#03543F] px-[10px] py-[2px] rounded-[6px] text-center font-semibold lg:text-[12px] text-[9px]"> 
                                 {mitra}
                             </p>
                         {/each}
