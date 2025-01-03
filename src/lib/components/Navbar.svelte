@@ -1,36 +1,37 @@
 <script lang="ts">
-    import logo from '$lib/images/AnsorPeduli.png';
-    import search from '$lib/logos/Search.svg';
-    import wa from '$lib/logos/WhatsApp.svg';
+	import logo from '$lib/logos/ansorlogo.png';
+	import search from '$lib/logos/Search.svg';
+
+	const openModal = () => {
+		// @ts-ignore
+		document.getElementById('my_modal_2').showModal();
+	};
 </script>
 
-<div class="navbar sticky top-0 z-50 bg-white px-[16px] border-b-[1px] border-gray-300">
-    <div class="mx-auto flex w-full max-w-7xl items-center justify-between lg:gap-x-3 gap-x-1 lg:py-3">
-        <a href="/" class="shrink-0 pe-4">
-            <img src={logo} alt="Ansor Peduli Logo" class="w-24 lg:w-28" />
-        </a> 
-        
-        <form class="w-full max-w-2xl">
-            <label class="relative flex w-full items-center">
-                <input 
-                    type="text" 
-                    placeholder="Cari program"
-                    name="search"
-                    class="w-full rounded-xl border border-gray-300 py-2 px-4 text-gray-700 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                />
-                <img 
-                    src={search} 
-                    alt="Search Icon" 
-                    class="absolute right-4 h-5 w-5 text-gray-400" 
-                />
-            </label>
-        </form>
+<header class="navbar sticky -top-[1px] z-50 border-b-[1px] border-gray-[#f7f7f7] bg-white px-[16px]">
+	<div
+		class="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-1 lg:gap-x-3 lg:py-3"
+	>
+		<a href="/" class="shrink-0 pe-4">
+			<img src={logo} alt="Ansor Peduli Logo" class="w-32 lg:w-44" />
+		</a>
 
-        <a 
-            href="/" 
-            class="shrink-0 rounded-xl bg-[#D6FFEA] p-2 transition-colors hover:bg-[#c1f5d9]"
-        >
-            <img src={wa} alt="WhatsApp" class="w-7" />
-        </a>
-    </div>
-</div>
+		<div class="max-w-2xl"></div>
+
+		<button
+			class="shrink-0 rounded-[8px] border border-[#E2E5E3] p-2 transition-colors lg:p-3"
+			onclick={() => openModal()}
+		>
+			<img src={search} alt="Search" class="h-[16px] w-[16px] lg:h-[20px] lg:w-[20px]" />
+		</button>
+		<dialog id="my_modal_2" class="modal">
+			<div class="modal-box">
+				<h3 class="text-lg font-bold">Hello!</h3>
+				<p class="py-4">Press ESC key or click outside to close</p>
+			</div>
+			<form method="dialog" class="modal-backdrop">
+				<button>close</button>
+			</form>
+		</dialog>
+	</div>
+</header>

@@ -2,35 +2,67 @@
 	import { page } from "$app/stores";
 	import DaruratNav from "$lib/components/DaruratNav.svelte";
     import Seo from "$lib/components/Seo.svelte";
-    import arrow_left from '$lib/icons/ArrowLeft.svg';
+    import bencana from "$lib/images/bencana.png";
+    import kebakaran from "$lib/images/kebakaran.png";
+    import keamanan from "$lib/images/keamanan.png";
+    import ambulance from "$lib/logos/Ambulance.png";
+    import ketertiban from "$lib/images/ketertiban.png";
     
     let pathname = $page.url.pathname;
 
     let datas = [
         {
             emergence: "BENCANA",
+            icon: bencana,
             slug: "bencana",
-            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset."
+            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.",
+            mitra: [
+                'BNPB','BMKG','SAR','BANSER'
+            ]
         },
         {
             emergence: "KEBAKARAN",
             slug: "kebakaran",
-            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset."
+            icon: kebakaran,
+            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.",
+            mitra: [
+                'POLISI',
+                'BANSER',
+            ]
         },
         {
             emergence: "KEAMANAN",
             slug: "keamanan",
-            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset."
+            icon: keamanan,
+            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.",
+            mitra: [
+                'AMBULAN',
+                'RUMAH SAKIT',
+                'PMI',
+                'BANSER'
+            ]
         },
         {
             emergence: "KESEHATAN",
             slug: "kesehatan",
-            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset."
+            icon: ambulance,
+            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.",
+            mitra: [
+                'DAMKAR',
+                'PLN',
+                'BANSER',
+            ]
         },
         {
             emergence: "KETERTIBAN",
             slug: "ketertiban",
-            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset."
+            icon: ketertiban,
+            description: "Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.",
+            mitra: [
+                'POLISI',
+                'SATPOL PP',
+                'BANSER',
+            ]
         },
     ]
 </script>
@@ -38,18 +70,29 @@
 <DaruratNav {pathname}/>
 <section class="px-[16px] py-[16px] flex flex-col lg:gap-y-5 gap-y-2">
     {#each datas as data}
-        <a href="/darurat/{data.slug}" class="rounded-xl border border-gray-300 hover:bg-gray-100">
-            <section class="rounded-t-xl flex gap-x-3 items-center border-b-[1px] border-gray-300 px-[16px] py-[12px]">
-                <div class="rounded-lg p-3 bg-green-500">
-                </div>
-                <h3 class="font-semibold">
+        <a href="/darurat/{data.slug}" class="rounded-[8px] border border-gray-300 hover:bg-[#EDFFF5] group hover:border-[#AFFFD5] ease-in-out duration-300">
+            <section class="rounded-t-xl flex gap-x-2 items-center border-b-[1px] border-gray-300 group-hover:border-[#AFFFD5] px-[16px] py-[12px]">
+                <img src="{data.icon}" alt="" class="h-[28px] w-[28px]" />
+                <h3 class="font-semibold text-[16px]">
                     {data.emergence}
                 </h3>
             </section>
-            <section class="px-[16px] py-[12px]">
-                <p>
+            <section class="px-[16px] py-[14px]">
+                <p class="text-[16px]">
                     {data.description}
                 </p>
+                <section class="flex gap-x-[10px] mt-3 items-center">
+                    <p class="text-[14px] font-semibold">
+                        MITRA
+                    </p>
+                    <section class="flex gap-x-1">
+                        {#each data.mitra as mitra}
+                            <p class="bg-[#DEF7EC] text-[#03543F] px-[10px] py-[2px] rounded-[6px] text-sm text-center font-semibold text-[9px]"> 
+                                {mitra}
+                            </p>
+                        {/each}
+                    </section>
+                </section>
             </section>
         </a>
     {/each}

@@ -3,9 +3,9 @@
 	import verified from '$lib/logos/verified.svg';
 </script>
 
-<div class="w-full rounded-xl border border-gray-300 bg-base-100 text-gray-500 flex lg:p-5 p-3">
+<div class="w-full rounded-[8px] border border-gray-300 bg-base-100 text-gray-500 flex p-3">
     <figure>
-        <img src={content.img} alt="Shoes" class="w-72 aspect-square rounded-xl object-cover" />
+        <img src={content.img} alt="Shoes" class="w-72 aspect-square rounded-[8px] object-cover" />
     </figure>
     <div class="flex flex-col justify-between px-5 lg:gap-y-0 gap-y-2">
         <h2 class="line-clamp-2 lg:h-16 h-12 font-semibold text-gray-700 lg:text-xl text-base">{content.title}</h2>

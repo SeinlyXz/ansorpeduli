@@ -5,7 +5,9 @@
 	let y = $state(0)
 </script>
 <svelte:window bind:scrollY={y}/>
-<section class="lg:max-w-screen-sm max-w-screen-md mx-auto min-h-screen">
-	<Navbar	/>
-	{@render children()}
+<section class="bg-[#f7f7f7]">
+	<section class="lg:max-w-screen-sm max-w-screen-sm mx-auto min-h-screen bg-white">
+		<Navbar	/>
+		{@render children()}
+	</section>
 </section>
