@@ -87,7 +87,7 @@
                     </p>
                     <section class="flex flex-wrap gap-1">
                         {#each data.mitra as mitra}
-                            <p class="bg-[#DEF7EC] text-[#03543F] px-[10px] py-[2px] rounded-[6px] text-center font-semibold lg:text-[12px] text-[9px]"> 
+                            <p class="bg-[#DEF7EC] text-[#03543F] px-[10px] py-[2px] rounded-[6px] text-center font-semibold lg:text-[14px] text-[12px]"> 
                                 {mitra}
                             </p>
                         {/each}
