@@ -7,7 +7,7 @@
     <a href="{pathname == "/darurat" ? "/" : "/darurat"}" class="text-xl font-semibold w-[15%]">
         <img src="{arrow_left}" alt="">
     </a>
-    <section class="lg:text-xl text-lg font-semibold w-[70%] text-center">
+    <section class="text-lg font-semibold w-[70%] text-center">
         {#if pathname == '/darurat'}
             <p>
                 Pilih Bantuan Darurat

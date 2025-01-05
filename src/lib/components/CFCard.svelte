@@ -3,7 +3,7 @@
 	import verified from '$lib/logos/verified.svg';
 </script>
 
-<div class="w-80 rounded-[8px] border border-gray-300 bg-base-100 text-gray-500 lg:w-96">
+<div class="w-80 rounded-[8px] border border-gray-300 bg-base-100 text-gray-500">
 	<figure>
 		<img src={content.img} alt="Shoes" class="h-52 w-full rounded-t-[8px] object-cover" />
 	</figure>

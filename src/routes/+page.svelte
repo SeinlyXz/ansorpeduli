@@ -68,35 +68,35 @@
 <section>
     
 </section>
-<section class="flex flex-col gap-y-10 lg:px-5 px-[16px]">
+<section class="flex flex-col gap-y-10 px-[16px]">
     <section class="flex flex-col gap-y-5">
         <section class="py-[16px] flex flex-col gap-y-2">
-            <h2 class="font-semibold text-2xl text-[#BE1717]">
+            <h2 class="font-bold text-2xl text-[#BE1717]">
                 Bantuan Darurat
             </h2>
-            <p class="lg:text-lg text-base">
+            <p class="text-base">
                 Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset.
             </p>
         </section>
-        <section class="bg-[#E22020] lg:px-10 lg:p-10 p-5 rounded-[8px] relative overflow-hidden w-full">
+        <section class="bg-[#E22020] p-5 rounded-[8px] relative overflow-hidden w-full">
             <section class="w-full flex flex-col gap-y-3 relative z-40">
                 <section class="flex relative">
-                    <h1 class="lg:w-[19rem] w-52 font-semibold text-white lg:text-2xl z-30">
+                    <h1 class="w-52 font-semibold text-white z-30">
                         Siap siaga untuk Anda! Hubungi SIGAB kapan saja, di mana saja.
                     </h1>
-                    <section class="flex justify-center items-center lg:ms-32 lg:-mt-[30px] ms-16 -mt-[10px]">
+                    <section class="flex justify-center items-center lg:ms-32 ms-16 -mt-[10px]">
                         <img 
                             src="{warning}" 
                             alt="" 
-                            class="absolute z-30 lg:w-14 w-10 lg:top-[0px] top-[5px]"
+                            class="absolute z-30 w-10 top-[5px]"
                         />
-                        <div class="absolute z-20 rounded-full bg-red-700 opacity-100 lg:w-28 lg:h-28 w-16 h-16"></div>
-                        <div class="absolute z-10 rounded-full bg-red-700 opacity-40 animate-slow-ping lg:w-28 lg:h-28 w-20 h-20 ease-in-out"></div>
-                        <div class="absolute z-0 rounded-full bg-red-700 opacity-30 animate-slow-ping-2 lg:w-44 lg:h-44 w-32 h-32 ease-in-out"></div>
+                        <div class="absolute z-20 rounded-full bg-red-700 opacity-100 w-16 h-16"></div>
+                        <div class="absolute z-10 rounded-full bg-red-700 opacity-40 animate-slow-ping w-20 h-20 ease-in-out"></div>
+                        <div class="absolute z-0 rounded-full bg-red-700 opacity-30 animate-slow-ping-2 w-32 h-32 ease-in-out"></div>
                     </section>            
                 </section>
-                <a href="/darurat" class="bg-gray-100 hover:bg-gray-200 text-black rounded-[8px] px-4 py-2 w-full flex gap-x-3 items-center justify-center font-semibold z-40">
-                    LAPOR SIGAB
+                <a href="/darurat" class="bg-gray-100 hover:bg-gray-200 text-black rounded-[8px] px-4 py-2 w-full flex gap-x-3 items-center justify-center font-semibold z-40 text-[16px]">
+                    BUTUH BANTUAN SEKARANG!
                     <img src="{arrow}" alt="" />
                 </a>
             </section>
@@ -104,40 +104,42 @@
     </section>
 </section>
 <div class="bg-[#f7f7f7] w-full h-2 my-10"></div>
-<section class="flex flex-col gap-y-10 lg:px-5 px-[16px]">
+<section class="flex flex-col gap-y-10 px-[16px]">
     <section class="flex flex-col gap-y-5">
-        <h1 class="text-2xl font-semibold text-green-500">
-            Galang Dana
-        </h1>
-        <h3 class="lg:text-lg text-base text-gray-500">
-            Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.
-        </h3>
-        <section class="flex flex-wrap lg:justify-around justify-between lg:gap-x-10">
+        <section class="flex flex-col gap-y-[14px]">
+            <h1 class="text-2xl font-bold text-green-500">
+                Galang Dana
+            </h1>
+            <h3 class="text-base text-gray-500">
+                Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.
+            </h3>
+        </section>
+        <section class="flex flex-wrap justify-between">
             {#each care_categories as category}
                 <section class="flex flex-col items-center gap-y-[8px]">
                     <section class="bg-[#D6FFEA] w-16 h-16 rounded-full flex justify-center items-center">
                         <img src="{category.icon}" alt="" class="rounded-full w-10 h-10 object-cover" />
                     </section>
-                    <p class="lg:text-base text-sm">
+                    <p class="text-sm">
                         {category.caption}
                     </p>
                 </section>
             {/each}
         </section>
         <section class="flex justify-between gap-x-[8px]">
-            <a href="/" class="bg-[#005EFF] hover:bg-[#005EFF]/80 lg:p-5 p-3 rounded-[8px] text-white w-full flex justify-between items-center">
-                <p class="font-medium lg:text-lg text-[14px]">
+            <a href="/" class="bg-[#005EFF] hover:bg-[#005EFF]/80 rounded-[8px] text-white w-full flex justify-between items-center px-3">
+                <p class="font-medium text-[14px]">
                     Tabungan
                 </p>
-                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[8px] font-medium">
+                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 px-3 py-1 rounded-2xl bg-white text-[8px] font-medium">
                     SEGERA
                 </p>
             </a>
-            <a href="/" class="bg-[#005EFF] hover:bg-[#005EFF]/80 lg:p-5 p-3 rounded-[8px] text-white w-full flex justify-between items-center group">
-                <p class="font-medium lg:text-lg text-[14px]">
+            <a href="/" class="bg-[#005EFF] hover:bg-[#005EFF]/80 p-3 rounded-[8px] text-white w-full flex justify-between items-center group">
+                <p class="font-medium text-[14px]">
                     Iuran Ansor
                 </p>
-                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 lg:px-5 lg:py-1 px-3 py-1 rounded-2xl bg-white lg:text-sm text-[8px] font-medium">
+                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 px-3 py-1 rounded-2xl bg-white text-[8px] font-medium">
                     SEGERA
                 </p>
             </a>

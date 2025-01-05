@@ -6,8 +6,8 @@
 </script>
 <svelte:window bind:scrollY={y}/>
 <section class="bg-[#f7f7f7]">
-	<section class="lg:max-w-screen-sm max-w-screen-sm mx-auto min-h-screen bg-white">
-		<Navbar	/>
-		{@render children()}
-	</section>
+    <Navbar />
+    <section class="max-w-[480px] mx-auto min-h-screen bg-white overflow-x-hidden">
+        {@render children()}
+    </section>
 </section>

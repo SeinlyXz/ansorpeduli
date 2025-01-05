@@ -20,21 +20,21 @@
     }
 </script>
 
-<header class="navbar sticky -top-[1px] z-50 border-b-[1px] border-gray-[#f7f7f7] bg-white px-[16px]">
+<header class="navbar sticky top-0 z-50 border-b-[1px] border-gray-[#f7f7f7] bg-white px-[16px] max-w-[480px] mx-auto">
 	<div
-		class="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-1 lg:gap-x-3 lg:py-3"
+		class="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-1"
 	>
 		<a href="/" class="shrink-0 pe-4">
-			<img src={logo} alt="Ansor Peduli Logo" class="w-32 lg:w-44" />
+			<img src={logo} alt="Ansor Peduli Logo" class="w-[12rem]" />
 		</a>
 
 		<div class="max-w-2xl"></div>
 
 		<button
-			class="shrink-0 rounded-[8px] border border-[#E2E5E3] p-2 transition-colors lg:p-3"
+			class="shrink-0 rounded-[8px] border border-[#E2E5E3] p-2 transition-colors"
 			onclick={() => openModal()}
 		>
-			<img src={search} alt="Search" class="h-[16px] w-[16px] lg:h-[20px] lg:w-[20px]" />
+			<img src={search} alt="Search" class="h-[16px] w-[16px]" />
 		</button>
 		<dialog id="my_modal_2" class="modal">
 			<div class="modal-box">

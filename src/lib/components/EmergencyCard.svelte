@@ -30,7 +30,7 @@
 
 <section class="flex flex-wrap justify-center gap-10 pt-5">
 	{#each contents as content}
-        <a href={content.link} class="lg:w-64 w-44">
+        <a href={content.link} class="w-44">
 		    <section class="card {content.color} shadow-xl py-14 text-gray-600">
 				<div class="flex items-center justify-center ">
 					<h2 class="card-title">{content.title}</h2>
