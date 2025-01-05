@@ -35,7 +35,7 @@
 
 <Seo title="Ansor {pathname.split('/')[2]}" />
 <DaruratNav {pathname} />
-<section class="flex flex-col gap-y-2 px-[16px] py-[12px]">
+<section class="flex flex-col gap-y-2 px-[16px] pt-[12px] pb-[72px]"> 
 	<h1 class="text-lg font-semibold">Formulir Bantuan Darurat</h1>
 	<section class="mt-3 rounded-lg bg-[#FDF6B2] px-[14px] py-[10px] text-[#723B13]">
 		<p>Silahkan isi formulir kedaruratan dengan benar dan sesuai situasi yang terjadi saat ini!</p>
@@ -56,7 +56,7 @@
 			</select>
 		</label>
 		<label for="nama" class="flex flex-col gap-y-2">
-			<p>Nama Lengkap Pelapor</p>
+			<p class="font-bold">Nama Lengkap Pelapor</p>
 			<input
 				type="text"
 				name="nama"
@@ -66,7 +66,7 @@
 			/>
 		</label>
 		<label for="phone" class="flex flex-col gap-y-2">
-			<p>Nomor Telepon</p>
+			<p class="font-bold">Nomor Telepon</p>
 			<input
 				type="number"
 				name="phone"
@@ -76,7 +76,7 @@
 			/>
 		</label>
 		<label for="details" class="flex flex-col gap-y-2">
-			<p>Detail Kejadian</p>
+			<p class="font-bold">Detail Kejadian</p>
 			<textarea
 				name="details"
 				class="textarea textarea-bordered w-full"
@@ -86,7 +86,7 @@
 			></textarea>
 		</label>
 		<label for="address" class="flex flex-col gap-y-2">
-			<p>Alamat Kejadian</p>
+			<p class="font-bold">Alamat Kejadian</p>
 			<textarea
 				name="address"
 				class="textarea textarea-bordered w-full"
@@ -95,7 +95,7 @@
 			></textarea>
 		</label>
 		<label for="file" class="flex flex-col gap-y-2">
-			<p>Upload Foto dari Kamera</p>
+			<p class="font-bold">Upload Foto dari Kamera</p>
             <button class="flex justify-center py-4 gap-x-3 bg-[#F6F7F7] text-[#9FA9A2] rounded-[8px] border border-dashed border-[#E5E7EB]" onclick={openCamera}>
                 <img src="{Camera}" alt="" class="w-[26px] h-[23px]">
                 Klik untuk mengambil gambar

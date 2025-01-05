@@ -20,9 +20,9 @@
     }
 </script>
 
-<header class="navbar sticky top-0 z-50 border-b-[1px] border-gray-[#f7f7f7] bg-white px-[16px] max-w-[480px] mx-auto">
+<header class="navbar sticky top-0 z-50 border-b-[1px] border-gray-[#f7f7f7] bg-white px-[16px]">
 	<div
-		class="mx-auto flex w-full max-w-7xl items-center justify-between gap-x-1"
+		class="mx-auto flex w-full items-center justify-between gap-x-1 max-w-[480px]"
 	>
 		<a href="/" class="shrink-0 pe-4">
 			<img src={logo} alt="Ansor Peduli Logo" class="w-[12rem]" />

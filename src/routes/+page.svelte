@@ -79,9 +79,9 @@
             </p>
         </section>
         <section class="bg-[#E22020] p-5 rounded-[8px] relative overflow-hidden w-full">
-            <section class="w-full flex flex-col gap-y-3 relative z-40">
+            <section class="w-full flex flex-col gap-y-[24px] relative z-40">
                 <section class="flex relative">
-                    <h1 class="w-52 font-semibold text-white z-30">
+                    <h1 class="w-52 font-semibold text-white z-30 leading-snug">
                         Siap siaga untuk Anda! Hubungi SIGAB kapan saja, di mana saja.
                     </h1>
                     <section class="flex justify-center items-center lg:ms-32 ms-16 -mt-[10px]">
@@ -95,9 +95,8 @@
                         <div class="absolute z-0 rounded-full bg-red-700 opacity-30 animate-slow-ping-2 w-32 h-32 ease-in-out"></div>
                     </section>            
                 </section>
-                <a href="/darurat" class="bg-gray-100 hover:bg-gray-200 text-black rounded-[8px] px-4 py-2 w-full flex gap-x-3 items-center justify-center font-semibold z-40 text-[16px]">
+                <a href="/darurat" class="bg-gray-100 hover:bg-gray-200 text-black rounded-[8px] px-4 py-2 w-full flex gap-x-3 items-center justify-center font-bold z-40 text-[18px]">
                     BUTUH BANTUAN SEKARANG!
-                    <img src="{arrow}" alt="" />
                 </a>
             </section>
         </section>
@@ -106,7 +105,7 @@
 <div class="bg-[#f7f7f7] w-full h-2 my-10"></div>
 <section class="flex flex-col gap-y-10 px-[16px]">
     <section class="flex flex-col gap-y-5">
-        <section class="flex flex-col gap-y-[14px]">
+        <section class="flex flex-col gap-y-[8px]">
             <h1 class="text-2xl font-bold text-green-500">
                 Galang Dana
             </h1>
@@ -120,7 +119,7 @@
                     <section class="bg-[#D6FFEA] w-16 h-16 rounded-full flex justify-center items-center">
                         <img src="{category.icon}" alt="" class="rounded-full w-10 h-10 object-cover" />
                     </section>
-                    <p class="text-sm">
+                    <p class="text-sm font-semibold">
                         {category.caption}
                     </p>
                 </section>
@@ -131,7 +130,7 @@
                 <p class="font-medium text-[14px]">
                     Tabungan
                 </p>
-                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 px-3 py-1 rounded-2xl bg-white text-[8px] font-medium">
+                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 px-3 py-1 rounded-2xl bg-white text-[10px] font-medium">
                     SEGERA
                 </p>
             </a>
@@ -139,7 +138,7 @@
                 <p class="font-medium text-[14px]">
                     Iuran Ansor
                 </p>
-                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 px-3 py-1 rounded-2xl bg-white text-[8px] font-medium">
+                <p class="text-[#2C05F2] group-hover:text-[#2C05F2]/80 px-3 py-1 rounded-2xl bg-white text-[10px] font-medium">
                     SEGERA
                 </p>
             </a>
@@ -148,7 +147,7 @@
 </section>
 <section class="flex flex-col gap-y-10 py-10">
     <section class="flex flex-col gap-y-5 w-full">
-        <h1 class="text-2xl font-semibold px-[16px]">
+        <h1 class="text-2xl font-bold px-[16px]">
             Program Peduli
         </h1>
         <div class="carousel carousel-center space-x-4 ps-[16px]">
@@ -162,7 +161,7 @@
         </div>
     </section>
     <section class="flex flex-col gap-y-5 w-full px-[16px]">
-        <h1 class="text-2xl font-semibold ">
+        <h1 class="text-2xl font-bold ">
             Semua Program
         </h1>
         <div class="flex flex-col gap-y-3">
