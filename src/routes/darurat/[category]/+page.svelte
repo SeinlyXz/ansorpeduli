@@ -4,13 +4,22 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import EasyCamera from '@cloudparker/easy-camera-svelte';
     import Camera from '$lib/logos/Camera.png';
-	import image1 from '$lib/images/Image1.jpg';
+
+	interface CameraDevice {
+		deviceId: string;
+		kind: string;
+		label: string;
+		groupId: string;
+	}
 
 	let width = $state(350);
 	let camera: EasyCamera;
-	let useFrontCamera = $state(false)
+	let cameraLists: CameraDevice[] = $state([]);
+	let useFrontCamera = $state(true)
 	let cameraState = $state(false)
 	let images: string[] = $state([])
+	let mirrorDisplay = $state(false);
+	let pathname = page.url.pathname;
 
 	const handleImage = async () => {
 		let imageData = await camera.captureImage();
@@ -29,22 +38,34 @@
 
 	const getDevices = async () => {
 		let devices = await camera.getCameraDevices()
-		alert(JSON.stringify(devices))
+		cameraLists = devices
 	}
 
     const openCamera = () => {
         // @ts-ignore
         document?.getElementById('open_camera_modal')?.showModal();
+		getDevices()
 		cameraState = true
 		camera.open()
     }
+	let currentCameraIndex = $state(0);
 
+	const switchCamera = () => {
+		if (cameraLists.length > 1) {
+			// Perbarui indeks kamera secara siklus
+			currentCameraIndex = (currentCameraIndex + 1) % cameraLists.length;
+
+			// Dapatkan deviceId kamera berikutnya
+			const nextCamera = cameraLists[currentCameraIndex];
+			if (nextCamera) {
+				camera.switchCamera(nextCamera.deviceId);
+			}
+		}
+	};
+	
 	const closeCamera = () => {
 		cameraState = false
 	}
-
-	let mirrorDisplay = $state(false);
-	let pathname = page.url.pathname;
 </script>
 
 <Seo title="Ansor {pathname.split('/')[2]}" />
@@ -161,13 +182,15 @@
                     bind:mirrorDisplay
 					useFrontCamera={useFrontCamera}
                 />
-				<section class="flex justify-center pt-5">
-					<button class="btn btn-lg btn-circle bg-green-500 text-white" type="button" onclick={handleImage} aria-label="Take a picture">
+				<section class="flex justify-between pt-5 px-20 gap-x-3">
+					<div></div>
+					<button class="btn btn-wide btn-circle bg-green-500 text-white" type="button" onclick={handleImage} aria-label="Take a picture">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>
 						</svg>
 					</button>
-					<button onclick={getDevices}>
-						Get Devices
+					<button aria-label="Switch Camera" onclick={switchCamera} class="rounded-full bg-gray-200 p-3">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-switch-camera"><path d="M11 19H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/><path d="M13 5h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5"/><circle cx="12" cy="12" r="3"/><path d="m18 22-3-3 3-3"/><path d="m6 2 3 3-3 3"/>
+						</svg>
 					</button>
 				</section>
             </section>
