@@ -17,7 +17,7 @@
 	let cameraLists: CameraDevice[] = $state([]);
 	let cameraState = $state(false)
 	let images: string[] = $state([])
-	let mirrorDisplay = $state(false);
+	let mirrorDisplay = $state(true);
 	let pathname = page.url.pathname;
 
 	const handleImage = async () => {
@@ -49,7 +49,7 @@
 		if (cameraLists.length > 0) {
 			const defaultCamera = cameraLists[0];
 			camera.switchCamera(defaultCamera.deviceId);
-			console.log(`Default Camera: ${defaultCamera.deviceId} - ${defaultCamera.label}`);
+			alert(`Default Camera: ${defaultCamera.deviceId} - ${defaultCamera.label}`);
 		} else {
 			console.warn("Tidak ada kamera yang tersedia setelah penyaringan.");
 		}
