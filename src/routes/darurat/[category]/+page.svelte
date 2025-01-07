@@ -25,7 +25,7 @@
 		if (images.length < 3) {
 			images = [...images, `${imageData}`];
 			// @ts-ignore
-			document?.getElementById('open_camera_modal')?.closeModal();
+			document?.getElementById('open_camera_modal')?.close();
 		} else {
 			return;
 		}
