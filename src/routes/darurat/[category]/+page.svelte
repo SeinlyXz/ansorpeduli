@@ -60,6 +60,7 @@
 		cameraState = true;
 		camera.open();
 		getDevices();
+		switchCamera();
 		// @ts-ignore
 		document?.getElementById('open_camera_modal')?.showModal();
 	};
@@ -74,7 +75,6 @@
 		const nextCamera = cameraLists[currentCameraIndex];
 		if (nextCamera) {
 			camera.switchCamera(nextCamera.deviceId);
-			alert(nextCamera.deviceId + "-" + nextCamera.label)
 		}
 	};
 
