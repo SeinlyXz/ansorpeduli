@@ -1,8 +1,7 @@
 <script>
     import Seo from "$lib/components/Seo.svelte";
-    import banner from "$lib/images/Banner.png";
     import warning from "$lib/logos/Warning.png";
-    import arrow from "$lib/logos/arrow-narrow-right.svg";
+    import image from "$lib/images/Image1.jpg";
 
     import gift from "$lib/logos/Gift.png";
     import cap from "$lib/logos/Cap.png";
@@ -33,7 +32,7 @@
     const crowdfundings = [
         {
             title: "Sedekah Bangun Sekolah Gratis Untuk Ratusan Anak Yatim Dan Dhufa",
-            img: "https://s3-alpha-sig.figma.com/img/a345/b1f3/1066788ab653d7338826292d7bebcad8?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=StwvCDoGYfbSSDMmiatqMa1TCSw1dj29FAQ5A5K56U-C-RweFv0Cc~BfZq~RPmUiF47t7avwZEd7OSubNdTxPwgZHY0VIVg9MphZiZAmh6MkbXOOgCgBEwvAc-KWpa78ezPmvk7eONd-B397O6XjSgUGVfG~2UWBQTnOnRgLTXdkqJ0eD~j~MiWVOEtOWAEpxO6rc1wd9MITbZldQEYo5NqzKky1K34fnvCbgWwUnHB2ejQnpqzgyTxnyIhH8LbLWl25ezcR9iD0r1BAUmPHkX6fmg2pf6eBIyVvFENpLx29NbHZdI1-uHorIN4aqXkHNgzxkzHSaHXVcdN-EP8wHA__",
+            img: image,
             author: {
                 name: "PW Ansor DIY",
                 verified: true,
@@ -43,7 +42,7 @@
         },
         {
             title: "Sedekah Bangun Sekolah Gratis Untuk Ratusan Anak Yatim Dan Dhufa",
-            img: "https://s3-alpha-sig.figma.com/img/7a0b/4ee7/d248529b057a41d3086490f75a303748?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hbwFBFwZjVL~3M07Z1bPrBos9C4~MISfLJchBk1grvshDpCNIg5jke8U0YVs7VyuKFYtOuJ8kSNJuDIQj3QC-8rdttJFwN~f2ZwixU7hajFEkqGGjaYz8Lu9gcO~xoRvBFfCKvm3XAPl71-d3OS9wfqccafLAemRvRKvMNucjrR2DgVhnYINPwMRLsIf3-VmAw4XAjuDRQH8-t2uqlsrV8dQfLXd~pugiYHZk5oIoRqdx4GOy~Z4QUJBSQNB2u~HkNqUFEHPdsLBXvQ2xf~9OzZ2tRf6T-S1u058yfKeBXuldscs3tmDrM2PisiaG2cwNPD0m-nGtXp4RpPrbKQ5Aw__",
+            img: image,
             author: {
                 name: "PW Ansor DIY",
                 verified: false,
@@ -53,7 +52,7 @@
         },
 		{
             title: "Sedekah Bangun Sekolah Gratis Untuk Ratusan Anak Yatim Dan Dhufa",
-            img: "https://s3-alpha-sig.figma.com/img/7a0b/4ee7/d248529b057a41d3086490f75a303748?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hbwFBFwZjVL~3M07Z1bPrBos9C4~MISfLJchBk1grvshDpCNIg5jke8U0YVs7VyuKFYtOuJ8kSNJuDIQj3QC-8rdttJFwN~f2ZwixU7hajFEkqGGjaYz8Lu9gcO~xoRvBFfCKvm3XAPl71-d3OS9wfqccafLAemRvRKvMNucjrR2DgVhnYINPwMRLsIf3-VmAw4XAjuDRQH8-t2uqlsrV8dQfLXd~pugiYHZk5oIoRqdx4GOy~Z4QUJBSQNB2u~HkNqUFEHPdsLBXvQ2xf~9OzZ2tRf6T-S1u058yfKeBXuldscs3tmDrM2PisiaG2cwNPD0m-nGtXp4RpPrbKQ5Aw__",
+            img: image,
             author: {
                 name: "PW Ansor DIY",
                 verified: false,
