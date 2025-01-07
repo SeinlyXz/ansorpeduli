@@ -12,7 +12,7 @@
 		groupId: string;
 	}
 
-	let width = $state(350);
+	let width = $state(340);
 	let camera: EasyCamera;
 	let cameraLists: CameraDevice[] = $state([]);
 	let cameraState = $state(false)
@@ -44,6 +44,7 @@
         // @ts-ignore
         document?.getElementById('open_camera_modal')?.showModal();
 		getDevices()
+		switchCamera()
 		cameraState = true
 		camera.open()
     }
@@ -57,7 +58,7 @@
 		const nextCamera = cameraLists[currentCameraIndex];
 		if (nextCamera) {
 			camera.switchCamera(nextCamera.deviceId);
-			alert(nextCamera.deviceId + "-" + nextCamera.label)
+			// alert(nextCamera.deviceId + "-" + nextCamera.label)
 		}
 	};
 
