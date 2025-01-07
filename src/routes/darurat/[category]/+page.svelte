@@ -45,6 +45,7 @@
         document?.getElementById('open_camera_modal')?.showModal();
 		getDevices()
 		cameraState = true
+		switchCamera()
 		camera.open()
     }
 	let currentCameraIndex = $state(0);
