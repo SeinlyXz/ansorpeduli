@@ -36,18 +36,35 @@
 	}
 
 	const getDevices = async () => {
-		let devices = await camera.getCameraDevices()
-		cameraLists = devices
-	}
+		let devices = await camera.getCameraDevices();
+		cameraLists = devices;
+
+		// Cari kamera belakang (biasanya memiliki label mengandung "back" atau "rear")
+		const backCamera = cameraLists.find((device) => 
+			device.label.toLowerCase().includes("back") || device.label.toLowerCase().includes("rear")
+		);
+
+		// Set kamera default ke kamera belakang jika ditemukan
+		if (backCamera) {
+			currentCameraIndex = cameraLists.indexOf(backCamera);
+			camera.switchCamera(backCamera.deviceId);
+		} else if (cameraLists.length > 0) {
+			// Jika tidak ada kamera belakang, gunakan kamera pertama di daftar
+			currentCameraIndex = 0;
+			camera.switchCamera(cameraLists[0].deviceId);
+		} else {
+			alert("Tidak ada perangkat kamera yang tersedia.");
+		}
+	};
 
     const openCamera = () => {
-        // @ts-ignore
-        document?.getElementById('open_camera_modal')?.showModal();
-		getDevices()
-		cameraState = true
-		switchCamera()
-		camera.open()
-    }
+		// @ts-ignore
+		document?.getElementById('open_camera_modal')?.showModal();
+		cameraState = true;
+		getDevices(); // Pastikan kamera yang tepat dipilih sebelum dibuka
+		camera.open();
+	};
+	
 	let currentCameraIndex = $state(0);
 
 	const switchCamera = () => {
