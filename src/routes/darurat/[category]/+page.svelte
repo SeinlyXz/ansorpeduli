@@ -56,18 +56,18 @@
 	};
 
 
-    const openCamera = () => {
+    const openCamera = async () => {
 		cameraState = true;
 		camera.open();
-		getDevices();
-		switchCamera();
+		await getDevices();
+		await switchCamera();
 		// @ts-ignore
 		document?.getElementById('open_camera_modal')?.showModal();
 	};
 
 	let currentCameraIndex = $state(0);
 
-	const switchCamera = () => {
+	const switchCamera = async () => {
 		// Perbarui indeks kamera secara siklus
 		currentCameraIndex = (currentCameraIndex + 1) % cameraLists.length;
 
@@ -195,6 +195,7 @@
                     bind:this={camera}
 					autoOpen={cameraState}
                     bind:mirrorDisplay
+					onInit={()=>cameraLists[0]}
                 />
 				<section class="flex justify-between pt-5 px-20 gap-x-3">
 					<div></div>
