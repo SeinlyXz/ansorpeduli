@@ -238,8 +238,7 @@
 					useFrontCamera={false}
 					useAudio={false}
 				/>
-				<section class="flex justify-between gap-x-3 px-20 pt-5">
-					<div></div>
+				<section class="flex justify-center pt-5">
 					<button
 						class="btn btn-circle btn-wide bg-green-500 text-white"
 						type="button"
