@@ -12,7 +12,7 @@
 		groupId: string;
 	}
 
-	let width = $state(340);
+	let width = $state(300);
 	let camera: EasyCamera;
 	let cameraLists: CameraDevice[] = $state([]);
 	let cameraState = $state(false)
@@ -44,7 +44,6 @@
         // @ts-ignore
         document?.getElementById('open_camera_modal')?.showModal();
 		getDevices()
-		switchCamera()
 		cameraState = true
 		camera.open()
     }
@@ -58,7 +57,7 @@
 		const nextCamera = cameraLists[currentCameraIndex];
 		if (nextCamera) {
 			camera.switchCamera(nextCamera.deviceId);
-			// alert(nextCamera.deviceId + "-" + nextCamera.label)
+			alert(nextCamera.deviceId + "-" + nextCamera.label)
 		}
 	};
 
@@ -89,7 +88,7 @@
 				</option>
 			</select>
 		</label>
-		<label for="nama" class="flex flex-col gap-y-2">
+		<label for="nama" class="flex flex-col gap-y-2 form-control">
 			<p class="font-bold">Nama Lengkap Pelapor</p>
 			<input
 				type="text"
@@ -99,7 +98,7 @@
 				required
 			/>
 		</label>
-		<label for="phone" class="flex flex-col gap-y-2">
+		<label for="phone" class="flex flex-col gap-y-2 form-control">
 			<p class="font-bold">Nomor Telepon</p>
 			<input
 				type="number"
@@ -109,7 +108,7 @@
 				required
 			/>
 		</label>
-		<label for="details" class="flex flex-col gap-y-2">
+		<label for="details" class="flex flex-col gap-y-2 form-control">
 			<p class="font-bold">Detail Kejadian</p>
 			<textarea
 				name="details"
@@ -119,7 +118,7 @@
 				required
 			></textarea>
 		</label>
-		<label for="address" class="flex flex-col gap-y-2">
+		<label for="address" class="flex flex-col gap-y-2 form-control">
 			<p class="font-bold">Alamat Kejadian</p>
 			<textarea
 				name="address"
@@ -128,9 +127,9 @@
 				required
 			></textarea>
 		</label>
-		<label for="file" class="flex flex-col gap-y-2">
+		<label for="file" class="flex flex-col gap-y-2 form-control">
 			<p class="font-bold">Upload Foto dari Kamera</p>
-			<section class="flex gap-x-3 justify-between">
+			<section class="flex gap-x-3">
 				{#if images.length == 0}
 					{#each Array(3) as _, i}
 						<div class="w-52 h-24 bg-gray-100 border border-gray-400 border-dashed rounded-xl relative flex justify-center items-center">
@@ -152,7 +151,7 @@
 					{/each}
 				{/if}
 			</section>
-            <button class="flex justify-center py-4 gap-x-3 bg-[#F6F7F7] text-[#9FA9A2] rounded-[8px] border border-dashed border-[#E5E7EB]" onclick={openCamera}>
+            <button class="flex justify-center py-4 gap-x-3 bg-[#F6F7F7] text-[#9FA9A2] rounded-[8px] border border-dashed border-[#E5E7EB]" onclick={openCamera} type="button">
                 <img src="{Camera}" alt="" class="w-[26px] h-[23px]">
                 Klik untuk mengambil gambar
             </button>
