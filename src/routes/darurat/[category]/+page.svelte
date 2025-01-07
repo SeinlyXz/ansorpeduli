@@ -22,13 +22,14 @@
 
 	const handleImage = async () => {
 		let imageData = await camera.captureImage();
-		console.log(imageData);
 		if (images.length < 3) {
 			images = [...images, `${imageData}`];
 			console.log(images);
 		} else {
 			return;
 		}
+		// @ts-ignore
+		document?.getElementById('open_camera_modal')?.closeModal();
 	};
 
 	const deleteImage = (index: number) => {
