@@ -8,6 +8,7 @@
 
 	let width = $state(350);
 	let camera: EasyCamera;
+	let useFrontCamera = $state(false)
 	let cameraState = $state(false)
 	let images: string[] = $state([])
 
@@ -26,17 +27,10 @@
 		images = images.filter((image, i) => i !== index);
 	}
 
-	// const handleVideo = async () => {
-	// 	let blob = await camera.startVideoRecording();
-	// 	if (blob) {
-	// 		const url = URL.createObjectURL(blob);
-	// 		const a = document.createElement('a');
-	// 		a.href = url;
-	// 		a.download = 'video.mp4';
-	// 		document.body.appendChild(a);
-	// 		a.click();
-	// 	}
-	// };
+	const getDevices = async () => {
+		let devices = await camera.getCameraDevices()
+		alert(JSON.stringify(devices))
+	}
 
     const openCamera = () => {
         // @ts-ignore
@@ -165,11 +159,15 @@
                     bind:this={camera}
 					autoOpen={cameraState}
                     bind:mirrorDisplay
+					useFrontCamera={useFrontCamera}
                 />
 				<section class="flex justify-center pt-5">
 					<button class="btn btn-lg btn-circle bg-green-500 text-white" type="button" onclick={handleImage} aria-label="Take a picture">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>
 						</svg>
+					</button>
+					<button onclick={getDevices}>
+						Get Devices
 					</button>
 				</section>
             </section>
