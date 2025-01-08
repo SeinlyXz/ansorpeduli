@@ -4,6 +4,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import EasyCamera from '@cloudparker/easy-camera-svelte';
 	import Camera from '$lib/logos/Camera.png';
+	import { onMount } from 'svelte';
 
 	interface CameraDevice {
 		deviceId: string;
@@ -44,7 +45,7 @@
 				console.warn("Tidak ada kamera yang terdeteksi");
 				return;
 			}
-
+			console.log(devices)
 			// Filter untuk mendapatkan kamera belakang
 			cameraLists = devices.filter(device => {
 				const label = device.label.toLowerCase();
@@ -58,7 +59,6 @@
 					label.includes("kamera belakang"))
 				);
 			});
-
 			// Jika tidak ada kamera belakang yang terdeteksi, gunakan semua kamera
 			if (cameraLists.length === 0) {
 				console.warn("Tidak ada kamera belakang, menggunakan semua kamera yang tersedia");
@@ -68,7 +68,7 @@
 			// Gunakan kamera pertama yang tersedia
 			if (cameraLists.length > 0) {
 				const defaultCamera = cameraLists[0];
-				await camera.switchCamera(defaultCamera.deviceId);
+				camera.switchCamera(defaultCamera.deviceId);
 				console.log(`Menggunakan kamera: ${defaultCamera.label} (${defaultCamera.deviceId})`);
 			}
 
@@ -77,28 +77,19 @@
 		}
 	};
 
-	const openCamera = async () => {
-		cameraState = true;
+	onMount(async () => {
 		camera.open();
 		await getDevices();
+	})
+
+	const openCamera = async () => {
+		cameraState = true;
 		// @ts-ignore
 		document?.getElementById('open_camera_modal')?.showModal();
 	};
 
-	let currentCameraIndex = $state(0);
-
-	const switchCamera = async () => {
-		// Perbarui indeks kamera secara siklus
-		currentCameraIndex = (currentCameraIndex + 1) % cameraLists.length;
-
-		// Dapatkan deviceId kamera berikutnya
-		const nextCamera = cameraLists[currentCameraIndex];
-		if (nextCamera) {
-			camera.switchCamera(nextCamera.deviceId);
-		}
-	};
-
 	const closeCamera = () => {
+		camera.close();
 		cameraState = false;
 	};
 </script>
@@ -198,7 +189,7 @@
 									/>
 								</svg>
 							</button>
-							<img src={image} alt="" class="h-full w-full rounded-xl object-cover" />
+							<img src={image} alt="" class="w-full h-full rounded-xl object-cover" />
 						</div>
 					{/each}
 				{/if}
@@ -232,7 +223,7 @@
 					bind:width
 					style="border-radius:5px;"
 					bind:this={camera}
-					autoOpen={cameraState}
+					autoOpen={false}
 					bind:mirrorDisplay
 					onInit={() => cameraLists[0]}
 					useFrontCamera={false}
