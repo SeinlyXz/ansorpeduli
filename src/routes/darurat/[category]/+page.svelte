@@ -4,7 +4,6 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import EasyCamera from '@cloudparker/easy-camera-svelte';
 	import Camera from '$lib/logos/Camera.png';
-	import { onMount } from 'svelte';
 
 	interface CameraDevice {
 		deviceId: string;
@@ -45,7 +44,7 @@
 				console.warn("Tidak ada kamera yang terdeteksi");
 				return;
 			}
-			console.log(devices)
+
 			// Filter untuk mendapatkan kamera belakang
 			cameraLists = devices.filter(device => {
 				const label = device.label.toLowerCase();
@@ -59,6 +58,7 @@
 					label.includes("kamera belakang"))
 				);
 			});
+
 			// Jika tidak ada kamera belakang yang terdeteksi, gunakan semua kamera
 			if (cameraLists.length === 0) {
 				console.warn("Tidak ada kamera belakang, menggunakan semua kamera yang tersedia");
@@ -68,7 +68,7 @@
 			// Gunakan kamera pertama yang tersedia
 			if (cameraLists.length > 0) {
 				const defaultCamera = cameraLists[0];
-				camera.switchCamera(defaultCamera.deviceId);
+				await camera.switchCamera(defaultCamera.deviceId);
 				console.log(`Menggunakan kamera: ${defaultCamera.label} (${defaultCamera.deviceId})`);
 			}
 
@@ -77,20 +77,17 @@
 		}
 	};
 
-	onMount(async () => {
-		camera.open();
-		await getDevices();
-	})
-
 	const openCamera = async () => {
+		camera.open();
 		cameraState = true;
+		await getDevices();
 		// @ts-ignore
 		document?.getElementById('open_camera_modal')?.showModal();
 	};
 
 	const closeCamera = () => {
-		camera.close();
 		cameraState = false;
+		camera.close();
 	};
 </script>
 
@@ -189,7 +186,7 @@
 									/>
 								</svg>
 							</button>
-							<img src={image} alt="" class="w-full h-full rounded-xl object-cover" />
+							<img src={image} alt="" class="h-full w-full rounded-xl object-cover" />
 						</div>
 					{/each}
 				{/if}
@@ -223,7 +220,7 @@
 					bind:width
 					style="border-radius:5px;"
 					bind:this={camera}
-					autoOpen={false}
+					autoOpen={cameraState}
 					bind:mirrorDisplay
 					onInit={() => cameraLists[0]}
 					useFrontCamera={false}
