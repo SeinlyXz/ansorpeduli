@@ -76,11 +76,16 @@
 			console.error("Error saat mengakses kamera:", error);
 		}
 	};
-
+	let isFirstAttempt = true;
 	const openCamera = async () => {
 		camera.open();
 		cameraState = true;
 		await getDevices();
+		if (isFirstAttempt) {
+			isFirstAttempt = false;
+			window.location.reload();
+			return;
+		}
 		// @ts-ignore
 		document?.getElementById('open_camera_modal')?.showModal();
 	};
