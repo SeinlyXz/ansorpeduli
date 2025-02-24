@@ -4,12 +4,12 @@
 
 	const openModal = () => {
 		// @ts-ignore
-		document.getElementById('my_modal_2').showModal();
+		document.getElementById('search_modal').showModal();
 	};
 
     const closeModal = () => {
         // @ts-ignore
-        document.getElementById('my_modal_2').close();
+        document.getElementById('search_modal').close();
     };
     let searchInput = $state('');
     const onsubmit = () => {
@@ -36,11 +36,14 @@
 		>
 			<img src={search} alt="Search" class="h-[16px] w-[16px]" />
 		</button>
-		<dialog id="my_modal_2" class="modal">
+		<dialog id="search_modal" class="modal">
 			<div class="modal-box">
-				<form class="flex flex-col gap-y-2" onsubmit={onsubmit}>
-                    <input type="text" name="search" placeholder="Cari..." class="input input-bordered w-full" bind:value={searchInput}>
-                    <button class="btn btn-sm btn-primary">Search</button>
+				<form class="flex flex-col gap-y-5" onsubmit={onsubmit}>
+					<h2 class="font-semibold text-center text-xl">
+						Cari di Ansor Peduli
+					</h2>
+                    <input type="text" name="search" placeholder="Cari..." class="input input-bordered w-full mb-10" bind:value={searchInput}>
+                    <button class="btn btn-sm btn-primary">Cari</button>
                 </form>
 			</div>
 			<form method="dialog" class="modal-backdrop">

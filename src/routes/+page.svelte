@@ -74,7 +74,7 @@
                 Bantuan Darurat
             </h2>
             <p class="text-base">
-                Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale reesizing asset.
+                Layanan kedaruratan dari Ansor untuk masyarakat yang membutuhkan bantuan cepat dan sigap.
             </p>
         </section>
         <section class="bg-[#E22020] p-5 rounded-[8px] relative overflow-hidden w-full">
@@ -109,7 +109,7 @@
                 Galang Dana
             </h1>
             <h3 class="text-base text-gray-500">
-                Font rotate star fill horizontal project duplicate. Polygon star ellipse italic vector scale.
+                Bersama kita berbagi! Salurkan donasi Anda untuk membantu mereka yang membutuhkan.
             </h3>
         </section>
         <section class="flex flex-wrap justify-between">

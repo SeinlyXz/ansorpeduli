@@ -4,6 +4,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import EasyCamera from '@cloudparker/easy-camera-svelte';
 	import Camera from '$lib/logos/Camera.png';
+	import { goto } from '$app/navigation';
 
 	interface CameraDevice {
 		deviceId: string;
@@ -18,7 +19,7 @@
 	let cameraState = $state(false);
 	let images: string[] = $state([]);
 	let mirrorDisplay = $state(false);
-	let pathname = page.url.pathname;
+	let pathname = $state(page.url.pathname);
 
 	const handleImage = async () => {
 		let imageData = await camera.captureImage();
@@ -39,29 +40,29 @@
 		try {
 			// Ambil daftar perangkat kamera
 			let devices = await camera.getCameraDevices();
-			
+
 			if (!devices || devices.length === 0) {
-				console.warn("Tidak ada kamera yang terdeteksi");
+				console.warn('Tidak ada kamera yang terdeteksi');
 				return;
 			}
 
 			// Filter untuk mendapatkan kamera belakang
-			cameraLists = devices.filter(device => {
+			cameraLists = devices.filter((device) => {
 				const label = device.label.toLowerCase();
 				// Mencari kamera belakang dengan berbagai kemungkinan label
 				return (
-					!label.includes("front") && 
-					!label.includes("kamera depan") &&
-					(label.includes("back") || 
-					label.includes("rear") || 
-					label.includes("environment") ||
-					label.includes("kamera belakang"))
+					!label.includes('front') &&
+					!label.includes('kamera depan') &&
+					(label.includes('back') ||
+						label.includes('rear') ||
+						label.includes('environment') ||
+						label.includes('kamera belakang'))
 				);
 			});
 
 			// Jika tidak ada kamera belakang yang terdeteksi, gunakan semua kamera
 			if (cameraLists.length === 0) {
-				console.warn("Tidak ada kamera belakang, menggunakan semua kamera yang tersedia");
+				console.warn('Tidak ada kamera belakang, menggunakan semua kamera yang tersedia');
 				cameraLists = devices;
 			}
 
@@ -71,9 +72,8 @@
 				await camera.switchCamera(defaultCamera.deviceId);
 				console.log(`Menggunakan kamera: ${defaultCamera.label} (${defaultCamera.deviceId})`);
 			}
-
 		} catch (error) {
-			console.error("Error saat mengakses kamera:", error);
+			console.error('Error saat mengakses kamera:', error);
 		}
 	};
 
@@ -89,6 +89,42 @@
 		cameraState = false;
 		camera.close();
 	};
+
+	let options = [
+        {
+            emergence: "BENCANA",
+            slug: "bencana",
+        },
+        {
+            emergence: "KEBAKARAN",
+            slug: "kebakaran",
+        },
+        {
+            emergence: "KEAMANAN",
+            slug: "keamanan",
+        },
+        {
+            emergence: "KESEHATAN",
+            slug: "kesehatan",
+        },
+        {
+            emergence: "KETERTIBAN",
+            slug: "ketertiban",
+        },
+    ]
+	const openModal = () => {
+		// @ts-ignore
+		document?.getElementById('aksi_options')?.showModal();
+	}
+
+	const chooseOption = (option: string) => {
+		goto(`/darurat/${option}`);
+		// @ts-ignore
+		document?.getElementById('aksi_options')?.close();
+	}
+	$effect(()=>{
+		pathname = page.url.pathname;
+	})
 </script>
 
 <Seo title="Ansor {pathname.split('/')[2]}" />
@@ -98,20 +134,37 @@
 	<section class="mt-3 rounded-lg bg-[#FDF6B2] px-[14px] py-[10px] text-[#723B13]">
 		<p>Silahkan isi formulir kedaruratan dengan benar dan sesuai situasi yang terjadi saat ini!</p>
 	</section>
+	<label for="category" class="flex flex-col gap-y-2">
+		<dialog id="aksi_options" class="modal">
+			<div class="modal-box flex flex-col gap-5">
+				<h2 class="text-xl font-semibold text-center">
+					Pilih Opsi Aksi
+				</h2>
+				{#each options as option}
+					<button class="btn w-full btn-gray-400" type="button" onclick={()=>chooseOption(option.slug)}>
+						{option.emergence}
+					</button>
+				{/each}
+			</div>
+			<form method="dialog" class="modal-backdrop">
+				<button>close</button>
+			</form>
+		</dialog>
+	</label>
 	<form
 		action="/upload"
 		method="POST"
 		enctype="multipart/form-data"
 		class="mt-5 flex flex-col gap-y-5"
 	>
-		<label for="category" class="flex flex-col gap-y-2">
-			<select name="category" id={pathname} class="select select-bordered">
-				<option
-					value={pathname.split('/')[2][0].toUpperCase() + pathname.split('/')[2].substring(1)}
-				>
-					{pathname.split('/')[2][0].toUpperCase() + pathname.split('/')[2].substring(1)}
-				</option>
-			</select>
+		<label for="" class="form-control flex flex-col gap-y-2">
+			<p class="font-bold">Aksi</p>
+			<button type="button" class="btn flex justify-between w-full" onclick={openModal}>
+				{pathname.split('/')[2][0].toUpperCase() + pathname.split('/')[2].substring(1)}
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+				</svg>			  
+			</button>
 		</label>
 		<label for="nama" class="form-control flex flex-col gap-y-2">
 			<p class="font-bold">Nama Lengkap Pelapor</p>

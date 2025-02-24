@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import '../app.css';
 	let { children } = $props();
@@ -10,4 +11,5 @@
     <section class="max-w-[480px] mx-auto min-h-screen bg-white overflow-x-hidden">
         {@render children()}
     </section>
+    <Footer />
 </section>
