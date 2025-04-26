@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from '$lib/logos/ansorlogo.png';
+	import logo from '$lib/images/ansor_peduli_new.png';
 	import search from '$lib/logos/Search.svg';
 
 	const openModal = () => {
@@ -25,7 +25,7 @@
 		class="mx-auto flex w-full items-center justify-between gap-x-1 max-w-[480px]"
 	>
 		<a href="/" class="shrink-0 pe-4">
-			<img src={logo} alt="Ansor Peduli Logo" class="w-[12rem]" />
+			<img src={logo} alt="Ansor Peduli Logo" class="w-[6rem]" />
 		</a>
 
 		<div class="max-w-2xl"></div>

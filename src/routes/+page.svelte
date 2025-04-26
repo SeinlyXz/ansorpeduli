@@ -10,6 +10,19 @@
 	import CrowdfundingCard from "$lib/components/CFCard.svelte";
 	import AllCfCard from "$lib/components/AllCFCard.svelte";
 
+    import polisi from "$lib/images/mitra/image 1.png";
+    import bnpb from "$lib/images/mitra/image 2.png";
+    import yudha from "$lib/images/mitra/image 3.png";
+    import timsar from "$lib/images/mitra/image 4.png";
+    import pmi from "$lib/images/mitra/image 5.png";
+    import pln from "$lib/images/mitra/image 6.png";
+    import pamongpraja from "$lib/images/mitra/image 7.png";
+    import bmkg from "$lib/images/mitra/image 8.png";
+
+    const mitra = [
+        polisi, bnpb, yudha, timsar, pmi, pln, pamongpraja, bmkg
+    ]
+
     const care_categories = [
         {
             caption: 'Social',
@@ -32,6 +45,7 @@
     const crowdfundings = [
         {
             title: "Sedekah Bangun Sekolah Gratis Untuk Ratusan Anak Yatim Dan Dhufa",
+            slug: 'sedekah-bangun-sekolah-gratis-untuk-ratusan-anak-yatim-dan-dhufa',
             img: image,
             author: {
                 name: "PW Ansor DIY",
@@ -76,6 +90,14 @@
             <p class="text-base">
                 Layanan kedaruratan dari Ansor untuk masyarakat yang membutuhkan bantuan cepat dan sigap.
             </p>
+            <p class="text-zinc-900 font-bold mt-5">
+                Mitra Kedaruratan
+            </p>
+            <section class="flex gap-3 justify-evenly">
+                {#each mitra as mitra}
+                    <img src={mitra} alt="" class="aspect-square w-10 object-contain" />
+                {/each}
+            </section>
         </section>
         <section class="bg-[#E22020] p-5 rounded-[8px] relative overflow-hidden w-full">
             <section class="w-full flex flex-col gap-y-[24px] relative z-40">

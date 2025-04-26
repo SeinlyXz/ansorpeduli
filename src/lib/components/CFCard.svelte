@@ -9,7 +9,9 @@
 	</figure>
 	<div class="flex flex-col justify-between gap-y-[16px] p-[16px]">
 		<section class="flex flex-col gap-y-[8px]">
-			<h2 class="line-clamp-2 h-14 font-semibold text-gray-700 text-lg">{content.title}</h2>
+			<a href={`/program/${content.slug}`} class="text-black font-semibold text-[18px]">
+				{content.title}
+			</a>
 			<section class="flex items-center gap-x-2">
 				<div class="h-4 w-4 rounded-full bg-green-500"></div>
 				<section class="flex items-center gap-x-1 font-medium text-[14px]">
