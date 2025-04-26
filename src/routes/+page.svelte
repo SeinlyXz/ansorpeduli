@@ -93,7 +93,7 @@
             <p class="text-zinc-900 font-bold mt-5">
                 Mitra Kedaruratan
             </p>
-            <section class="flex gap-3 justify-evenly">
+            <section class="flex gap-1 md:gap-3 justify-evenly">
                 {#each mitra as mitra}
                     <img src={mitra} alt="" class="aspect-square w-10 object-contain" />
                 {/each}
